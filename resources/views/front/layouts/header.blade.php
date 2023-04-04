@@ -11,7 +11,7 @@
                             <use xlink:href="{{ asset('front/images/sprite.svg#cross-20') }}"></use>
                         </svg></button></form>
             </div><button class="header__mobilemenu" type="button"><svg width="22px" height="16px">
-                    <use xlink:href="images/sprite.svg#menu"></use>
+                    <use xlink:href="{{asset('front/images/sprite.svg#menu') }}"></use>
                 </svg></button> <a href="{{ route('home') }}" class="header__logo"><!-- logo --> <svg class="logo"
                     xmlns="http://www.w3.org/2000/svg" width="82px" height="24px">
                     <path
