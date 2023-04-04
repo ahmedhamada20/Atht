@@ -35,7 +35,7 @@
 								<p class="mb-0">Sign in to continue to WebkitX.</p>							
 							</div>
 							<div class="p-40">
-								<form action="" method="post">
+								<form action="" method="post" autocomplete="off">
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
