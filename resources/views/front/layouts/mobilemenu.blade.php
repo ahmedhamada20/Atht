@@ -221,10 +221,7 @@
                                                 href="{{route('shop_grid')}}">Shop Full Grid 5</a></li>
                                         <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
                                                 href="{{route('shop_grid')}}">Shop List</a></li>
-                                        <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
-                                                href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
-                                        <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
-                                                href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
+                                       
                                     </ul>
                                 </div>
                             </li>
@@ -238,8 +235,7 @@
                                     href="{{route('account')}}">My Account</a></li>
                             <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
                                     href="{{route('track_order')}}">Track Order</a></li>
-                            <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
-                                    href="wishlist.html">Wishlist</a></li>
+                         
                             <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
                                     href="{{route('compare')}}">Compare</a></li>
                         </ul>
@@ -255,55 +251,26 @@
                         <ul class="mobilemenu__links mobilemenu__links--level--2">
                             <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
                                     href="{{route('blog')}}">Blog Grid</a></li>
-                            <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
-                                    href="blog-list.html">Blog List</a></li>
-                            <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
-                                    href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                          
                             <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
                                     href="{{route('post')}}">Post</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="mobilemenu__item mobilemenu__item--has-children" data-collapse-item><a
-                        class="mobilemenu__link" href="about-us.html">Pages </a><button type="button"
-                        class="mobilemenu__arrow mobilemenu__expander" data-collapse-trigger><svg width="6px"
-                            height="9px">
-                            <use xlink:href="{{ asset('front/images/sprite.svg#arrow-left-6x9') }}"></use>
-                        </svg></button>
-                    <div class="mobilemenu__sub-links" data-collapse-content>
-                        <ul class="mobilemenu__links mobilemenu__links--level--2">
-                            <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
-                                    href="about-us.html">About Us</a></li>
-                            <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
-                                    href="{{route('contact_us')}}">Contact Us</a></li>
-                            <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
-                                    href="404.html">404</a></li>
-                            <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
-                                    href="terms-and-conditions.html">Terms And Conditions</a></li>
-                            <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
-                                    href="faq.html">FAQ</a></li>
-                            <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
-                                    href="components.html">Components</a></li>
-                            <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
-                                    href="typography.html">Typography</a></li>
-                        </ul>
-                    </div>
-                </li>
+               
                 <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
                         href="{{route('contact_us')}}">Contact Us</a></li>
-                <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
-                        href="https://themeforest.net/item/meblya-responsive-ecommerce-html-template/23181513">Buy
-                        Theme</a></li>
+              
                 <li class="mobilemenu__divider"></li>
-                <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
-                        href="wishlist.html">Wishlist<span class="mobilemenu__counter">5</span></a></li>
+                {{-- <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
+                        href="wishlist.html">Wishlist<span class="mobilemenu__counter">5</span></a></li> --}}
                 <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
                         href="{{route('compare')}}">Compare<span class="mobilemenu__counter">2</span></a></li>
                 <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link" href="{{route('account')}}">My
                         Account</a></li>
                 <li class="mobilemenu__item" data-collapse-item><a class="mobilemenu__link"
                         href="{{route('track_order')}}">Track Order</a></li>
-                <li class="mobilemenu__item mobilemenu__item--has-children" data-collapse-item><button type="button"
+                {{-- <li class="mobilemenu__item mobilemenu__item--has-children" data-collapse-item><button type="button"
                         class="mobilemenu__link mobilemenu__expander" data-collapse-trigger>Language: <span
                             class="mobilemenu__value">EN</span></button> <button type="button"
                         class="mobilemenu__arrow mobilemenu__expander mobilemenu__arrow--decorative"
@@ -320,8 +287,8 @@
                                     href="#">French</a></li>
                         </ul>
                     </div>
-                </li>
-                <li class="mobilemenu__item mobilemenu__item--has-children" data-collapse-item><button type="button"
+                </li> --}}
+                {{-- <li class="mobilemenu__item mobilemenu__item--has-children" data-collapse-item><button type="button"
                         class="mobilemenu__link mobilemenu__expander" data-collapse-trigger>Currency: <span
                             class="mobilemenu__value">USD</span></button> <button type="button"
                         class="mobilemenu__arrow mobilemenu__expander mobilemenu__arrow--decorative"
@@ -338,7 +305,7 @@
                                     href="#">Euro</a></li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </div>
