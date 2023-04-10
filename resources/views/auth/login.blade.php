@@ -31,21 +31,22 @@
 					<div class="col-lg-5 col-md-5 col-12">
 						<div class="bg-white rounded10 shadow-lg">
 							<div class="content-top-agile p-20 pb-0">
-								<h2 class="text-primary">Let's Get Started</h2>
-								<p class="mb-0">Sign in to continue to WebkitX.</p>							
+								{{-- <h2 class="text-primary">Let's Get Started</h2> --}}
+								<p class="mb-0">Sign in </p>							
 							</div>
 							<div class="p-40">
-								<form action="" method="post" autocomplete="off">
+								<form action="{{route('login')}}" method="post" autocomplete="off">
+								@csrf
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
-											<input type="text" class="form-control ps-15 bg-transparent" placeholder="Username">
+											<input type="email" name="email" class="form-control ps-15 bg-transparent" placeholder="Email">
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="input-group mb-3">
 											<span class="input-group-text  bg-transparent"><i class="ti-lock"></i></span>
-											<input type="password" class="form-control ps-15 bg-transparent" placeholder="Password">
+											<input type="password" name="password" class="form-control ps-15 bg-transparent" placeholder="Password">
 										</div>
 									</div>
 									  <div class="row">

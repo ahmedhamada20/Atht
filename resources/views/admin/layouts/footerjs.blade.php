@@ -12,3 +12,6 @@
 <script src="{{ asset('dash/js/pages/dashboard.js') }}"></script>
 <script src="https://kit.fontawesome.com/8c73d8862b.js" crossorigin="anonymous"></script>
 @yield('js')
+
+<!-- END THEME LAYOUT SCRIPTS -->
+<script src="https://cdn.ckeditor.com/4.9.0/full-all/ckeditor.js"></script>

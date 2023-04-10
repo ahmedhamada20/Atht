@@ -16,8 +16,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Prefix = "Admin" is Routes Servises
 
 require __DIR__.'/auth.php';
 
+Route::middleware(['auth','admin'])->group(function(){
 
-Route::get('/',[AdminController::class,'index'])->name('admin');
+    Route::get('/',[AdminController::class,'index'])->name('admin');
+
+    Route::get('/setting',[AdminController::class,'setting'])->name('setting');
+    Route::post('/updatedSetting',[AdminController::class,'updatedSetting'])->name('updatedSetting');
+
+});
+
+
+

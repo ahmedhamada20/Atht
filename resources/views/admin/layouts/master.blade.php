@@ -18,20 +18,9 @@
 
 
 
-    <div class="sticky-toolbar">
-        <a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Buy Now" class="waves-effect waves-light btn btn-success btn-flat mb-5 btn-sm" target="_blank">
-            <span class="icon-Money"><span class="path1"></span><span class="path2"></span></span>
-        </a>
-        <a href="https://themeforest.net/user/multipurposethemes/portfolio" data-bs-toggle="tooltip" data-bs-placement="left" title="Portfolio" class="waves-effect waves-light btn btn-danger btn-flat mb-5 btn-sm" target="_blank">
-            <span class="icon-Image"></span>
-        </a>
-        <a id="chat-popup" href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Live Chat" class="waves-effect waves-light btn btn-warning btn-flat btn-sm">
-            <span class="icon-Group-chat"><span class="path1"></span><span class="path2"></span></span>
-        </a>
-    </div>
-    <!-- Sidebar -->
 
-    <div id="chat-box-body">
+
+    {{-- <div id="chat-box-body">
         <div id="chat-circle" class="waves-effect waves-circle btn btn-circle btn-lg btn-warning l-h-70">
             <div id="chat-overlay"></div>
             <span class="icon-Group-chat fs-30"><span class="path1"></span><span class="path2"></span></span>
@@ -106,7 +95,7 @@
                                 <p class="text-muted fs-12 mb-0">3 minutes</p>
                             </div>
                             <span class="msg-avatar">
-                                <img src="../images/avatar/3.jpg" class="avatar avatar-lg">
+                                <img src="{{ asset('dash/images/avatar/3.jpg') }}" class="avatar avatar-lg">
                             </span>
                         </div>
                         <div class="cm-msg-text">
@@ -139,7 +128,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
     @include('admin.layouts.footerjs')
 
 </body>

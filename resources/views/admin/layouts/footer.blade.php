@@ -68,7 +68,7 @@
 
                 <div class="media py-10 px-0">
                     <a class="avatar avatar-lg status-warning" href="#">
-                        <img src="../images/avatar/3.jpg" alt="...">
+                        <img src="{{ asset('dash/images/avatar/3.jpg') }}" alt="...">
                     </a>
                     <div class="media-body">
                         <p class="fs-16">

@@ -33,16 +33,11 @@
                 </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="extra_calendar.html"><i class="icon-Commit"><span
+                            <li><a href="{{ route('setting') }}"><i class="icon-Commit {{ request()->is('setting') ? ' active' : null }}"><span
                                     class="path1"></span><span class="path2"></span></i>اعدادات الموقع</a></li>
                             <li><a href="contact_app.html"><i class="icon-Commit"><span class="path1"></span><span
                                     class="path2"></span></i>حالات الطلبات</a></li>
-                            {{-- <li><a href="contact_app_chat.html"><i class="icon-Commit"><span
-                                    class="path1"></span><span class="path2"></span></i>Chat</a></li>
-                            <li><a href="extra_taskboard.html"><i class="icon-Commit"><span
-                                    class="path1"></span><span class="path2"></span></i>Todo</a></li>
-                            <li><a href="mailbox.html"><i class="icon-Commit"><span class="path1"></span><span
-                                    class="path2"></span></i>Mailbox</a></li> --}}
+
                         </ul>
                     </li>
                     <li class="treeview">
