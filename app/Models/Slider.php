@@ -20,4 +20,16 @@ class Slider extends Model
         'notes_4',
         'notes_5',
     ];
+
+    protected $appends = ['image'];
+
+    public function getImageAttribute()
+    {
+        return $this->photo != null ? asset('admin/pictures/slider/' . $this->id .'/'.$this->photo->Filename ) : null;
+    }
+
+    public function photo()
+    {
+        return $this->morphOne(Photo::class, 'photoable');
+    }
 }

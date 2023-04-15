@@ -211,6 +211,14 @@
                     </li> --}}
                     <li class="main-nav__item"><a class="main-nav__link" href="{{route('contact_us')}}">Contact
                             Us</a></li>
+
+                            @guest
+                            <li class="main-nav__item"><a class="main-nav__link" href="{{route('login')}}">Login</a></li>
+                            @else
+                            <li class="main-nav__item"><a class="main-nav__link" href="{{route('dashboard')}}">Account</a></li>
+
+                            @endguest
+                    
                     {{-- <li class="main-nav__item"><a class="main-nav__link"
                             href="https://themeforest.net/item/meblya-responsive-ecommerce-html-template/23181513">Buy
                             Theme</a></li> --}}

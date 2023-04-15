@@ -12,7 +12,7 @@ class SliderController extends Controller
     protected $data = [
         'folder' => 'admin.',
         'Models' => 'App\Models\Slider',
-        'route' => 'slider',
+        'route' => 'admin/slider',
         'folderBlade' => 'slider',
         'folderImage' => 'slider',
         'fileName' => 'test'
@@ -22,7 +22,7 @@ class SliderController extends Controller
     public function index()
     {
         $data = [
-            'data' => $this->data['Models']::all(),
+            'data' => $this->data['Models']::orderByDESC('id')->get(),
         ];
         return view($this->data['folder'] . $this->data['folderBlade'] . '.index', $data);
     }
@@ -71,7 +71,7 @@ class SliderController extends Controller
                     ]);
                 }
             }
-            // toastr()->success('تم الحفظ بنجاح');
+            toastr()->success('تم الحفظ بنجاح');
             return redirect($this->data['route']);
         } catch (\Exception $th) {
             return redirect()->withErrors(['error' => $th->getMessage()]);
@@ -139,13 +139,13 @@ class SliderController extends Controller
                     'photoable_type' => $this->data['Models'],
                 ], [
                     'Filename' => $file_to_store,
-                    'photoable_id' => $data->id,
+                    'photoable_id' => $request->id,
                     'photoable_type' => $this->data['Models'],
                 ]);
             }
         }
 
-        // toastr()->success('تم التحديث بنجاح');
+        toastr()->success('تم التحديث بنجاح');
         return redirect($this->data['route']);
     }
 

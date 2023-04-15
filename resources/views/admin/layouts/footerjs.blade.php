@@ -1,6 +1,7 @@
 <script src="{{ asset('dash/js/vendors.min.js') }}"></script>
 <script src="{{ asset('dash/js/pages/chat-popup.js') }}"></script>
 <script src="{{ asset('dash/assets/icons/feather-icons/feather.min.js') }}"></script>
+<script src="{{ asset('dash/assets/vendor_components/datatable/datatables.min.js') }}"></script>
 
 <script src="{{ asset('dash/assets/vendor_components/moment/min/moment.min.js') }}"></script>
 <script src="{{ asset('dash/assets/vendor_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
@@ -15,3 +16,5 @@
 
 <!-- END THEME LAYOUT SCRIPTS -->
 <script src="https://cdn.ckeditor.com/4.9.0/full-all/ckeditor.js"></script>
+
+<script src="{{ asset('dash/js/pages/data-table.js') }}"></script>

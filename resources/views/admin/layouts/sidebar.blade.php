@@ -43,60 +43,20 @@
                     <li class="treeview">
                         <a href="#">
                             <i data-feather="edit"></i>
-                            <span>Widgets</span>
+                            <span>السليدر</span>
                             <span class="pull-right-container">
                   <i class="fa fa-angle-right pull-right"></i>
                 </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="widgets_blog.html"><i class="icon-Commit"><span class="path1"></span><span
-                                    class="path2"></span></i>Blog</a></li>
-                            <li><a href="widgets_chart.html"><i class="icon-Commit"><span class="path1"></span><span
-                                    class="path2"></span></i>Chart</a></li>
-                            <li><a href="widgets_list.html"><i class="icon-Commit"><span class="path1"></span><span
-                                    class="path2"></span></i>List</a></li>
-                            <li><a href="widgets_social.html"><i class="icon-Commit"><span
-                                    class="path1"></span><span class="path2"></span></i>Social</a></li>
-                            <li><a href="widgets_statistic.html"><i class="icon-Commit"><span
-                                    class="path1"></span><span class="path2"></span></i>Statistic</a></li>
-                            <li><a href="widgets_weather.html"><i class="icon-Commit"><span
-                                    class="path1"></span><span class="path2"></span></i>Weather</a></li>
-                            <li><a href="widgets.html"><i class="icon-Commit"><span class="path1"></span><span
-                                    class="path2"></span></i>Widgets</a></li>
-                            <li><a href="email_index.html"><i class="icon-Commit"><span class="path1"></span><span
-                                    class="path2"></span></i>Emails</a></li>
-                            <li class="treeview">
-                                <a href="#">
-                                    <i class="icon-Commit"><span class="path1"></span><span
-                                            class="path2"></span></i>Maps
-                                    <span class="pull-right-container">
-                            <i class="fa fa-angle-right pull-right"></i>
-                        </span>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li><a href="map_google.html"><i class="icon-Commit"><span class="path1"></span><span
-                                            class="path2"></span></i>Google Map</a></li>
-                                    <li><a href="map_vector.html"><i class="icon-Commit"><span class="path1"></span><span
-                                            class="path2"></span></i>Vector Map</a></li>
-                                </ul>
-                            </li>
-                            <li class="treeview">
-                                <a href="#">
-                                    <i class="icon-Commit"><span class="path1"></span><span
-                                            class="path2"></span></i>Modals
-                                    <span class="pull-right-container">
-                            <i class="fa fa-angle-right pull-right"></i>
-                        </span>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li><a href="component_modals.html"><i class="icon-Commit"><span
-                                            class="path1"></span><span class="path2"></span></i>Modals</a></li>
-                                    <li><a href="component_sweatalert.html"><i class="icon-Commit"><span
-                                            class="path1"></span><span class="path2"></span></i>Sweet Alert</a></li>
-                                    <li><a href="component_notification.html"><i class="icon-Commit"><span
-                                            class="path1"></span><span class="path2"></span></i>Toastr</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="{{ route('slider.index') }}"><i class="icon-Commit"><span class="path1"></span><span
+                                    class="path2"></span></i>جميع السليدر</a></li>
+                            <li><a href="{{ route('slider.create') }}"><i class="icon-Commit"><span class="path1"></span><span
+                                    class="path2"></span></i>اضافه جديده</a></li>
+                           
+                    
+                                
+                          
                         </ul>
                     </li>
                     <li class="treeview">
