@@ -39,11 +39,11 @@ class AdminController extends Controller
 
 
         if ($file = $request->file('photo')) {
-            File::delete(public_path('admin/pictures/Setting' . '/' . $request->id . '/' . $request->oldfile));
+            File::delete(public_path('dash/pictures/Setting' . '/' . $request->id . '/' . $request->oldfile));
             $file_name = $file->getClientOriginalName();
             $file_name_Extension = $request->file('photo')->getClientOriginalExtension();
             $file_to_store = time() . '_' . explode('.', $file_name)[0] . '_.' . $file_name_Extension;
-            if ($file->move('admin/pictures/Setting' . '/' . $request->id, $file_to_store)) {
+            if ($file->move('dash/pictures/Setting' . '/' . $request->id, $file_to_store)) {
                 Photo::updateOrCreate([
                     'photoable_id' => $request->id,
                     'photoable_type' => "App\ModelsSetting",

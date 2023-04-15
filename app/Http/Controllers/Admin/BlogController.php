@@ -64,7 +64,7 @@ class BlogController extends Controller
                 $file_name_Extension = $request->file('cover')->getClientOriginalExtension();
                 $file_to_store = time() . '_' . explode('.', $file_name)[0] . '_.' . $file_name_Extension;
 
-                if ($file->move('admin/pictures/' . $this->data['folderBlade'] . '/' . $data->id, $file_to_store)) {
+                if ($file->move('dash/pictures/' . $this->data['folderBlade'] . '/' . $data->id, $file_to_store)) {
                     Photo::create([
                         'Filename' => $file_to_store,
                         'photoable_id' => $data->id,
@@ -130,11 +130,11 @@ class BlogController extends Controller
 
 
         if ($file = $request->file('cover')) {
-            File::delete(public_path('admin/pictures/' . $this->data['folderBlade'] . '/' . $request->id . '/' . $request->oldfile));
+            File::delete(public_path('dash/pictures/' . $this->data['folderBlade'] . '/' . $request->id . '/' . $request->oldfile));
             $file_name = $file->getClientOriginalName();
             $file_name_Extension = $request->file('cover')->getClientOriginalExtension();
             $file_to_store = time() . '_' . explode('.', $file_name)[0] . '_.' . $file_name_Extension;
-            if ($file->move('admin/pictures/' . $this->data['folderBlade'] . '/' . $request->id, $file_to_store)) {
+            if ($file->move('dash/pictures/' . $this->data['folderBlade'] . '/' . $request->id, $file_to_store)) {
                 Photo::updateOrCreate([
                     'photoable_id' => $request->id,
                     'photoable_type' => $this->data['Models'],
@@ -160,7 +160,7 @@ class BlogController extends Controller
     {
         $this->data['Models']::destroy($request->id);
         if ($request->oldfile) {
-            File::delete(public_path('admin/pictures/' . $this->data['folderBlade'] . '/' . $request->id . '/' . $request->oldfile));
+            File::delete(public_path('dash/pictures/' . $this->data['folderBlade'] . '/' . $request->id . '/' . $request->oldfile));
             Photo::where('photoable_id', $request->id)->where('photoable_type', $this->data['Models'])->delete();
         }
         // toastr()->success('Done Deleted Successfully');

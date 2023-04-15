@@ -30,7 +30,7 @@ class Setting extends Model
 
     public function getImageAttribute()
     {
-        return $this->photo != null ? asset('admin/pictures/Setting/' . $this->id .'/'.$this->photo->Filename ) : null;
+        return $this->photo != null ? asset('dash/pictures/Setting/' . $this->id .'/'.$this->photo->Filename ) : null;
     }
 
     public function photo()

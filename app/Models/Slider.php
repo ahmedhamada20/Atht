@@ -25,7 +25,7 @@ class Slider extends Model
 
     public function getImageAttribute()
     {
-        return $this->photo != null ? asset('admin/pictures/slider/' . $this->id .'/'.$this->photo->Filename ) : null;
+        return $this->photo != null ? asset('dash/pictures/slider/' . $this->id .'/'.$this->photo->Filename ) : null;
     }
 
     public function photo()
