@@ -19,4 +19,16 @@ class LatestCollection extends Model
         'notes_4',
         'notes_5',
     ];
+
+    protected $appends = ['image'];
+
+    public function getImageAttribute()
+    {
+        return $this->photo != null ? asset('dash/pictures/latestCollection/' . $this->id .'/'.$this->photo->Filename ) : null;
+    }
+
+    public function photo()
+    {
+        return $this->morphOne(Photo::class, 'photoable');
+    }
 }
