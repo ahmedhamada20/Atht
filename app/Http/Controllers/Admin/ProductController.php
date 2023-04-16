@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Color;
 use Illuminate\Http\Request;
 use App\Models\Photo;
+use App\Models\SubCategory;
 use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
@@ -35,7 +37,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view($this->data['folder'] . $this->data['folderBlade'] . '.create');
+        $data = [
+            'sub_categories' => SubCategory::all(),
+            'colors' => Color::all(),
+        ];
+        return view($this->data['folder'] . $this->data['folderBlade'] . '.create',$data);
     }
 
     /**
@@ -90,8 +96,8 @@ class ProductController extends Controller
                     ]);
                 }
             }
-            // toastr()->success('تم الحفظ بنجاح');
-            return redirect($this->data['route']);
+            toastr()->success('تم الحفظ بنجاح');
+            return redirect('admin/'.$this->data['route']);
         } catch (\Exception $th) {
             return redirect()->withErrors(['error' => $th->getMessage()]);
         }
@@ -121,6 +127,8 @@ class ProductController extends Controller
     {
         $data = [
             'data' => $this->data['Models']::findorfail($id),
+            'sub_categories' => SubCategory::all(),
+            'colors' => Color::all(),
         ];
         return view($this->data['folder'] . $this->data['folderBlade'] . '.edit', $data);
     }
@@ -182,8 +190,8 @@ class ProductController extends Controller
             }
         }
 
-        // toastr()->success('تم التحديث بنجاح');
-        return redirect($this->data['route']);
+        toastr()->success('تم التحديث بنجاح');
+        return redirect('admin/'.$this->data['route']);
     }
 
     /**
@@ -199,7 +207,7 @@ class ProductController extends Controller
             File::delete(public_path('dash/pictures/' . $this->data['folderBlade'] . '/' . $request->id . '/' . $request->oldfile));
             Photo::where('photoable_id', $request->id)->where('photoable_type', $this->data['Models'])->delete();
         }
-        // toastr()->success('Done Deleted Successfully');
-        return redirect($this->data['route']);
+        toastr()->success('Done Deleted Successfully');
+        return redirect('admin/'.$this->data['route']);
     }
 }

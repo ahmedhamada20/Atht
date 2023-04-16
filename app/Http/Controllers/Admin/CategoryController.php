@@ -71,8 +71,8 @@ class CategoryController extends Controller
                     ]);
                 }
             }
-            // toastr()->success('تم الحفظ بنجاح');
-            return redirect($this->data['route']);
+            toastr()->success('تم الحفظ بنجاح');
+            return redirect('admin/'.$this->data['route']);
         } catch (\Exception $th) {
             return redirect()->withErrors(['error' => $th->getMessage()]);
         }
@@ -144,8 +144,8 @@ class CategoryController extends Controller
             }
         }
 
-        // toastr()->success('تم التحديث بنجاح');
-        return redirect($this->data['route']);
+        toastr()->success('تم التحديث بنجاح');
+        return redirect('admin/'.$this->data['route']);
     }
 
     /**
@@ -161,7 +161,7 @@ class CategoryController extends Controller
             File::delete(public_path('dash/pictures/' . $this->data['folderBlade'] . '/' . $request->id . '/' . $request->oldfile));
             Photo::where('photoable_id', $request->id)->where('photoable_type', $this->data['Models'])->delete();
         }
-        // toastr()->success('Done Deleted Successfully');
-        return redirect($this->data['route']);
+        toastr()->success('Done Deleted Successfully');
+        return redirect('admin/'.$this->data['route']);
     }
 }

@@ -3,20 +3,19 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
-use Illuminate\Http\Request;
 use App\Models\Photo;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
-class SubCategoryController extends Controller
+class StatusController extends Controller
 {
-
+    
     protected $data = [
         'folder' => 'admin.',
-        'Models' => 'App\Models\SubCategory',
-        'route' => 'subCategory',
-        'folderBlade' => 'subCategory',
-        'folderImage' => 'subCategory',
+        'Models' => 'App\Models\Status',
+        'route' => 'status',
+        'folderBlade' => 'status',
+        'folderImage' => 'status',
         'fileName' => 'test'
     ];
 
@@ -36,10 +35,7 @@ class SubCategoryController extends Controller
      */
     public function create()
     {
-        $data = [
-            'categories' => Category::all(),
-        ];
-        return view($this->data['folder'] . $this->data['folderBlade'] . '.create', $data);
+        return view($this->data['folder'] . $this->data['folderBlade'] . '.create');
     }
 
     /**
@@ -52,15 +48,13 @@ class SubCategoryController extends Controller
     {
         try {
             $data = $this->data['Models']::create([
-                'category_id' => $request->category_id ?? null,
-                'name' => $request->name ?? null,
-                'notes' => $request->notes ?? null,
-                'image' => $request->image ?? null,
-                'notes_1' => $request->notes_1 ?? null,
-                'notes_2' => $request->notes_2 ?? null,
-                'notes_3' => $request->notes_3 ?? null,
-                'notes_4' => $request->notes_4 ?? null,
-                'notes_5' => $request->notes_5 ?? null,
+                'name'=> $request->name ?? null,
+                'notes'=> $request->notes ?? null,
+                'notes_1'=> $request->notes_1 ?? null,
+                'notes_2'=> $request->notes_2 ?? null,
+                'notes_3'=> $request->notes_3 ?? null,
+                'notes_4'=> $request->notes_4 ?? null,
+                'notes_5'=> $request->notes_5 ?? null,
             ]);
 
             if ($file = $request->file('cover')) {
@@ -77,7 +71,7 @@ class SubCategoryController extends Controller
                 }
             }
             toastr()->success('تم الحفظ بنجاح');
-            return redirect('admin/' . $this->data['route']);
+            return redirect('admin/'.$this->data['route']);
         } catch (\Exception $th) {
             return redirect()->withErrors(['error' => $th->getMessage()]);
         }
@@ -107,7 +101,6 @@ class SubCategoryController extends Controller
     {
         $data = [
             'data' => $this->data['Models']::findorfail($id),
-            'categories' => Category::all(),
         ];
         return view($this->data['folder'] . $this->data['folderBlade'] . '.edit', $data);
     }
@@ -122,15 +115,13 @@ class SubCategoryController extends Controller
     public function update(Request $request, $id)
     {
         $data = $this->data['Models']::findorfail($request->id)->update([
-            'category_id' => $request->category_id ?? null,
-            'name' => $request->name ?? null,
-            'notes' => $request->notes ?? null,
-            'image' => $request->image ?? null,
-            'notes_1' => $request->notes_1 ?? null,
-            'notes_2' => $request->notes_2 ?? null,
-            'notes_3' => $request->notes_3 ?? null,
-            'notes_4' => $request->notes_4 ?? null,
-            'notes_5' => $request->notes_5 ?? null,
+            'name'=> $request->name ?? null,
+            'notes'=> $request->notes ?? null,
+            'notes_1'=> $request->notes_1 ?? null,
+            'notes_2'=> $request->notes_2 ?? null,
+            'notes_3'=> $request->notes_3 ?? null,
+            'notes_4'=> $request->notes_4 ?? null,
+            'notes_5'=> $request->notes_5 ?? null,
         ]);
 
 
@@ -152,7 +143,7 @@ class SubCategoryController extends Controller
         }
 
         toastr()->success('تم التحديث بنجاح');
-        return redirect('admin/' . $this->data['route']);
+        return redirect('admin/'.$this->data['route']);
     }
 
     /**
@@ -169,6 +160,6 @@ class SubCategoryController extends Controller
             Photo::where('photoable_id', $request->id)->where('photoable_type', $this->data['Models'])->delete();
         }
         toastr()->success('Done Deleted Successfully');
-        return redirect('admin/' . $this->data['route']);
+        return redirect('admin/'.$this->data['route']);
     }
 }

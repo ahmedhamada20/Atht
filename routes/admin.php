@@ -1,7 +1,14 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ColorController;
+use App\Http\Controllers\Admin\LatestCollectionController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\StatusController;
+use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +36,13 @@ Route::middleware(['auth','admin'])->group(function(){
     Route::post('/updatedSetting',[AdminController::class,'updatedSetting'])->name('updatedSetting');
 
     Route::resource('slider',SliderController::class);
+    Route::resource('category',CategoryController::class);
+    Route::resource('subCategory',SubCategoryController::class);
+    Route::resource('color',ColorController::class);
+    Route::resource('product',ProductController::class);
+    Route::resource('latestCollection',LatestCollectionController::class);
+    Route::resource('blog',BlogController::class);
+    Route::resource('status',StatusController::class);
 
 });
 

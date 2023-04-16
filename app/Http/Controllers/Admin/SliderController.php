@@ -162,7 +162,7 @@ class SliderController extends Controller
             File::delete(public_path('dash/pictures/' . $this->data['folderBlade'] . '/' . $request->id . '/' . $request->oldfile));
             Photo::where('photoable_id', $request->id)->where('photoable_type', $this->data['Models'])->delete();
         }
-        // toastr()->success('Done Deleted Successfully');
+        toastr()->success('Done Deleted Successfully');
         return redirect($this->data['route']);
     }
 }

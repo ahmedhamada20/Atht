@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('title')
-السليدر
+الفئات الفرعيه
 @endsection
 
 @section('css')
@@ -26,7 +26,7 @@
                        <div class="box-header with-border">
                          <h3 class="box-title">
                            
-                            <a href="{{ route('slider.create') }}" class="btn btn-success" style="font-family: 'Cairo', sans-serif;">  اضافه جديده</a>
+                            <a href="{{ route('subCategory.create') }}" class="btn btn-success" style="font-family: 'Cairo', sans-serif;">  اضافه جديده</a>
 
                             
                          </h3>
@@ -40,7 +40,8 @@
                                        <th>#</th>
                                        <th>الصوره</th>
                                        <th>الاسم</th>
-                                       <th>الرابط</th>
+                                       <th>الفئه الرئسيه</th>
+                                    
                                      
                                        <th>العمليات</th>
                                    </tr>
@@ -55,10 +56,10 @@
                                         @endif
                                     </td>
                                     <td>{{ $row->name }}</td>
-                                    <td><a href="{{ $row->url }}" target="_blank" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a></td>
+                                    <td>{{ $row->category->name }}</td>
                                     <td>
-                                        <a href="{{ route('slider.edit',$row->id) }}" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
-                                        <form action="{{ route('slider.destroy',$row->id) }}" method="post">
+                                        <a href="{{ route('subCategory.edit',$row->id) }}" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
+                                        <form action="{{ route('subCategory.destroy',$row->id) }}" method="post">
                                             @method('DELETE')
                                                 @csrf
                                                 <input type="hidden" name="id" value="{{ $row->id }}">
