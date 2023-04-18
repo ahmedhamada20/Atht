@@ -1878,78 +1878,10 @@ Home
                                         src="{{ asset('front/images/categories/category1.jpg') }}" alt=""></div>
                                 <div class="category-card__name">Chandeliers</div>
                                 <div class="category-card__products">15 Products</div>
-                            </a></div>
-                        <div class="card category-card"><a href="#">
-                                <div class="category-card__image"><img
-                                        srcset="{{ asset('front/images/categories/category2.jpg, images/categories/category2@2x.jpg 2x') }}"
-                                        src="{{ asset('front/images/categories/category2.jpg') }}" alt=""></div>
-                                <div class="category-card__name">Wooden Chairs</div>
-                                <div class="category-card__products">112 Products</div>
-                            </a></div>
-                        <div class="card category-card"><a href="#">
-                                <div class="category-card__image"><img
-                                        srcset="{{ asset('front/images/categories/category3.jpg, images/categories/category3@2x.jpg 2x') }}"
-                                        src="{{ asset('front/images/categories/category3.jpg') }}" alt=""></div>
-                                <div class="category-card__name">Fabric Sofas</div>
-                                <div class="category-card__products">34 Products</div>
-                            </a></div>
-                        <div class="card category-card"><a href="#">
-                                <div class="category-card__image"><img
-                                        srcset="{{ asset('front/images/categories/category4.jpg, images/categories/category4@2x.jpg 2x') }}"
-                                        src="{{ asset('front/images/categories/category4.jpg') }}" alt=""></div>
-                                <div class="category-card__name">Bookshelves</div>
-                                <div class="category-card__products">27 Products</div>
-                            </a></div>
-                        <div class="card category-card"><a href="#">
-                                <div class="category-card__image"><img
-                                        srcset="{{ asset('front/images/categories/category5.jpg, images/categories/category5@2x.jpg 2x') }}"
-                                        src="{{ asset('front/images/categories/category5.jpg') }}" alt=""></div>
-                                <div class="category-card__name">Stools</div>
-                                <div class="category-card__products">52 Products</div>
-                            </a></div>
-                        <div class="card category-card"><a href="#">
-                                <div class="category-card__image"><img
-                                        srcset="{{ asset('front/images/categories/category6.jpg, images/categories/category6@2x.jpg 2x') }}"
-                                        src="{{ asset('front/images/categories/category6.jpg') }}" alt=""></div>
-                                <div class="category-card__name">Beds</div>
-                                <div class="category-card__products">43 Products</div>
-                            </a></div>
-                        <div class="card category-card"><a href="#">
-                                <div class="category-card__image"><img
-                                        srcset="{{ asset('front/images/categories/category7.jpg, images/categories/category7@2x.jpg 2x') }}"
-                                        src="{{ asset('front/images/categories/category7.jpg') }}" alt=""></div>
-                                <div class="category-card__name">Decor</div>
-                                <div class="category-card__products">196 Products</div>
-                            </a></div>
-                        <div class="card category-card"><a href="#">
-                                <div class="category-card__image"><img
-                                        srcset="{{ asset('front/images/categories/category8.jpg, images/categories/category8@2x.jpg 2x') }}"
-                                        src="{{ asset('front/images/categories/category8.jpg') }}" alt=""></div>
-                                <div class="category-card__name">Armchairs</div>
-                                <div class="category-card__products">89 Products</div>
-                            </a></div>
-                        <div class="card category-card"><a href="#">
-                                <div class="category-card__image"><img
-                                        srcset="{{ asset('front/images/categories/category9.jpg, images/categories/category9@2x.jpg 2x') }}"
-                                        src="{{ asset('front/images/categories/category9.jpg') }}" alt=""></div>
-                                <div class="category-card__name">Shoe Cabinets</div>
-                                <div class="category-card__products">47 Products</div>
-                            </a></div>
-                        <div class="card category-card"><a href="#">
-                                <div class="category-card__image"><img
-                                        srcset="{{ asset('front/images/categories/category10.jpg, images/categories/category10@2x.jpg 2x') }}"
-                                        src="{{ asset('front/images/categories/category10.jpg') }}" alt=""></div>
-                                <div class="category-card__name">Lamps</div>
-                                <div class="category-card__products">78 Products</div>
-                            </a></div>
-                        <div class="card category-card"><a href="#">
-                                <div class="category-card__image"><img
-                                        srcset="{{ asset('front/images/categories/category11.jpg, images/categories/category11@2x.jpg 2x') }}"
-                                        src="{{ asset('front/images/categories/category11.jpg') }}" alt=""></div>
-                                <div class="category-card__name">Cabinets</div>
-                                <div class="category-card__products">53 Products</div>
-                            </a></div>
-                        <div class="card category-card"><a href="#">
+                            </a>
+                        </div>
+
+
                                 <div class="category-card__image"><img
                                         srcset="{{ asset('front/images/categories/category12.jpg, images/categories/category12@2x.jpg 2x') }}"
                                         src="{{ asset('front/images/categories/category12.jpg') }}" alt=""></div>
