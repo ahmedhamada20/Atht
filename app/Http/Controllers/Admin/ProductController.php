@@ -58,7 +58,7 @@ class ProductController extends Controller
                 'sub_category_id' => $request->sub_category_id ?? null,
                 'color_id' => $request->color_id ?? null,
                 'notes' => $request->notes ?? null,
-                'rating' => $request->rating ?? null,
+                'rating' => 5 ,
                 'price_sub' => $request->price_sub ?? null,
                 'price' => $request->price ?? null,
                 'notes_1' => $request->notes_1 ?? null,
@@ -96,6 +96,22 @@ class ProductController extends Controller
                     ]);
                 }
             }
+
+
+             // Insert Many Photos
+        if ($request->hasfile('FilenameMany')) {
+            foreach ($request->file('FilenameMany') as $file) {
+                $name = $file->getClientOriginalName();
+                $file->move('dash/pictures/' . '/' . $this->data['folderBlade'] . '/' . $data->id, $file->getClientOriginalName());
+
+                // Inset Date
+                Photo::create([
+                    'Filename' => $name,
+                    'photoable_id' => $data->id,
+                    'photoable_type' => $this->data['Models'],
+                ]);
+            }
+        }
             toastr()->success('تم الحفظ بنجاح');
             return redirect('admin/'.$this->data['route']);
         } catch (\Exception $th) {

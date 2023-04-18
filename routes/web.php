@@ -19,6 +19,7 @@ Route::get('/',[HomeController::class,'index'])->name('home');
 
 Route::get('/shop_grid',[HomeController::class,'shop_grid'])->name('shop_grid');
 Route::get('/product',[HomeController::class,'products'])->name('products');
+Route::get('/Details/product/{id}',[HomeController::class,'Details_products'])->name('Details_products');
 Route::get('/post',[HomeController::class,'post'])->name('post');
 Route::get('/cart',[HomeController::class,'cart'])->name('cart');
 Route::get('/checkout',[HomeController::class,'checkout'])->name('checkout');

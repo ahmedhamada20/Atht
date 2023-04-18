@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,6 +12,14 @@ class HomeController extends Controller
     {
         return view('front.index');
     }
+
+
+    public function Details_products($id)
+    {
+       $data = Product::findorfail($id);
+       return view('front.product.index',compact('data'));
+    }
+
     public function shop_grid()
     {
         return view('front.shop_grid.index');

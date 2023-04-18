@@ -52,6 +52,11 @@ class Product extends Model
         return $this->morphOne(Photo::class, 'photoable');
     }
 
+    public function photos()
+    {
+        return $this->morphMany(Photo::class, 'photoable');
+    }
+
 
     public function sub_category()
     {

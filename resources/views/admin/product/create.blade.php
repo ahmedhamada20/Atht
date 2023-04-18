@@ -100,6 +100,16 @@
 
                                 <br>
 
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label>جميع صور المنتج</label>
+                                        <input type="file" name="FilenameMany[]" required accept="image/*"  multiple>
+                                    </div>
+                                </div>
+
+                                
+
                                 <div class="row">
                                     <div class="col" style="text-align: center">
                                         <button class="btn btn-success">حفظ البيانات</button>
