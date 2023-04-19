@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Blog;
 use App\Models\Product;
 use App\Models\Setting;
 use App\Models\Slider;
@@ -36,6 +37,24 @@ if (!function_exists('getProducts')) {
     function getProducts()
     {
         $data = Product::get();
+        if (!empty($data)) {
+            return $data;
+        }
+    }
+}
+if (!function_exists('getRoundProducts')) {
+    function getRoundProducts()
+    {
+        $data = Product::inRandomOrder()->limit(2)->get();
+        if (!empty($data)) {
+            return $data;
+        }
+    }
+}
+if (!function_exists('getBlogs')) {
+    function getBlogs()
+    {
+        $data = Blog::get();
         if (!empty($data)) {
             return $data;
         }

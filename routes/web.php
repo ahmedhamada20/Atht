@@ -15,11 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+require __DIR__.'/auth.php';
+
 Route::get('/',[HomeController::class,'index'])->name('home');
 
 Route::get('/shop_grid',[HomeController::class,'shop_grid'])->name('shop_grid');
 Route::get('/product',[HomeController::class,'products'])->name('products');
-Route::get('/Details/product/{id}',[HomeController::class,'Details_products'])->name('Details_products');
+Route::get('/details/product/{id}',[HomeController::class,'Details_products'])->name('Details_products');
+Route::get('/details/post/{id}',[HomeController::class,'Details_post'])->name('Details_post');
 Route::get('/post',[HomeController::class,'post'])->name('post');
 Route::get('/cart',[HomeController::class,'cart'])->name('cart');
 Route::get('/checkout',[HomeController::class,'checkout'])->name('checkout');
@@ -33,10 +36,16 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+
+
+
+

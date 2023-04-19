@@ -32,57 +32,20 @@ Posts
                             <article class="card post">
                                 <header class="post__header">
                                     <div class="post__category"><a href="#">Latest News</a></div>
-                                    <h2 class="post__title">New Collection Of Office Furniture Anero Manero
-                                        Will Go On Sale May 27</h2>
-                                    <div class="post__meta"><span class="post__meta-item">By&nbsp;<a
-                                                href="#" class="post__meta-author">Jessica Moore</a>
-                                        </span><span class="post__meta-item"><i
-                                                class="far fa-clock"></i>&nbsp;November 30, 2018
-                                        </span><span class="post__meta-item"><i
-                                                class="far fa-comments"></i>&nbsp;4&nbsp;Comments</span>
-                                    </div>
+                                    <h2 class="post__title">
+                                       {{ $data->name }}
+                                    </h2>
+                                    
                                 </header>
                                 <div class="post__featured"><img
-                                        srcset="{{ asset('front/images/article/article1.jpg, images/article/article1@2x.jpg 2x') }}"
-                                        src="{{ asset('front/images/article/article1.jpg" ') }}"alt=""></div>
+                                        srcset="{{ $data->image }}"
+                                        src="{{ $data->image }}"alt=""></div>
                                 <div class="post__content">
                                     <div class="typography">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Curabitur suscipit suscipit mi, non tempor nulla finibus eget.
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Suspendisse dictum libero eget metus suscipit placerat. Duis
-                                            consequat tellus laoreet tellus pharetra, eu tempor mi ornare.
-                                            Nulla at nibh urna. Morbi vulputate enim id sapien placerat
-                                            consequat a ut nunc.</p>
-                                        <h2>Office Furniture</h2>
-                                        <p>Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                                            Vestibulum mollis, velit quis efficitur lobortis, leo velit
-                                            pharetra neque, non pharetra lacus ipsum in odio. Ut placerat
-                                            ante ut diam congue, <a href="#">et hendrerit felis
-                                                pulvinar</a>. Aenean sem lorem, volutpat ut ipsum quis,
-                                            viverra posuere purus. Curabitur laoreet, mauris vel tincidunt
-                                            varius, nibh ipsum molestie enim, quis elementum purus nulla nec
-                                            justo. Quisque leo neque, lobortis in mauris at, imperdiet
-                                            maximus quam. Morbi a massa vitae nunc convallis lacinia et ut
-                                            sapien. Nunc feugiat sollicitudin diam in tempus. Ut tincidunt
-                                            justo at sagittis tristique. Sed eu ex a mi hendrerit lobortis
-                                            nec ac massa.</p>
-                                        <figure><a href="#"><img
-                                                    srcset="{{ asset('front/images/article/article2.jpg, images/article/article2@2x.jpg 2x') }}"
-                                                    src="{{ asset('front/images/article/article2.jpg') }}" alt=""></a>
-                                            <figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                elit</figcaption>
-                                        </figure>
-                                        <p>Nullam magna ligula, maximus sed tristique ac, fermentum et diam.
-                                            Donec sagittis, tellus ut vehicula mollis, justo metus convallis
-                                            dolor, vel pretium eros dui ut velit. Etiam pharetra felis eu
-                                            orci suscipit, ac auctor eros suscipit. Vivamus ipsum est,
-                                            consectetur non porta id, tincidunt a lorem. Cras a arcu sodales
-                                            tortor viverra accumsan. Curabitur non sapien nisi. Mauris
-                                            pellentesque dictum viverra.</p>
+                                        {!! $data->notes !!}
                                     </div>
                                 </div>
-                                <footer class="post__footer">
+                                {{-- <footer class="post__footer">
                                     <div class="post__footer-content">
                                         <div class="post__tags-share">
                                             <div class="post__tags">Tags: <a href="#">New Collection</a>, <a
@@ -132,7 +95,7 @@ Posts
                                             </div>
                                         </div>
                                     </div>
-                                </footer>
+                                </footer> --}}
                             </article>
                             <section class="card">
                                 <div class="card__header">
@@ -140,71 +103,34 @@ Posts
                                 </div>
                                 <div class="card__content mb-2">
                                     <div class="posts-list posts-list--related-posts">
+                                        @foreach (getBlogs() as $row)
                                         <div class="posts-list__item">
                                             <div class="post-card post-card--layout--compact">
-                                                <div class="post-card__image"><a href="{{route('post')}}"><img
-                                                            srcset="{{ asset('front/images/posts/post1.jpg, images/posts/post1@2x.jpg 2x') }}"
-                                                            src="{{ asset('front/images/posts/post1.jpg') }}" alt=""></a></div>
+                                                <div class="post-card__image"><a href="{{route('Details_post',$row->id)}}"><img
+                                                            srcset="{{ $row->image }}"
+                                                            src="{{ $row->image }}" alt=""></a></div>
                                                 <div class="post-card__info">
-                                                    <div class="post-card__date">November 30, 2018</div>
+                                                    <div class="post-card__date">{{ $row->created_at->format('Y-M-d') }}</div>
                                                     <div class="post-card__name"><a
                                                             class="post-card__name-link"
-                                                            href="{{route('post')}}">New Collection Of Office
-                                                            Furniture Anero Manero Will Go On Sale May
-                                                            27</a></div>
-                                                    <div class="post-card__description">Lorem ipsum dolor
-                                                        sit amet, consectetur adipisi nel elit, sed do
-                                                        eiusmod tempor incididunt ut labore et dolore magna
-                                                        aliqua.</div><a href="{{route('post')}}"
+                                                            href="{{route('Details_post',$row->id)}}">
+                                                            {{ $row->name }}
+                                                        </a></div>
+                                                    <div class="post-card__description">
+                                                        
+                                                    </div><a href="{{route('Details_post',$row->id)}}"
                                                         class="btn btn-primary btn-xs post-card__read-more">Read
                                                         More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="posts-list__item">
-                                            <div class="post-card post-card--layout--compact">
-                                                <div class="post-card__image"><a href="{{route('post')}}"><img
-                                                            srcset="{{ asset('front/images/posts/post2.jpg, images/posts/post2@2x.jpg 2x') }}"
-                                                            src="{{ asset('front/images/posts/post2.jpg') }}" alt=""></a></div>
-                                                <div class="post-card__info">
-                                                    <div class="post-card__date">October 19, 2018</div>
-                                                    <div class="post-card__name"><a
-                                                            class="post-card__name-link"
-                                                            href="{{route('post')}}">Donec viverra, nulla a accumsan
-                                                            finibus commodo ligula</a></div>
-                                                    <div class="post-card__description">Lorem ipsum dolor
-                                                        sit amet, consectetur adipisi nel elit, sed do
-                                                        eiusmod tempor incididunt ut labore et dolore magna
-                                                        aliqua.</div><a href="{{route('post')}}"
-                                                        class="btn btn-primary btn-xs post-card__read-more">Read
-                                                        More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="posts-list__item">
-                                            <div class="post-card post-card--layout--compact">
-                                                <div class="post-card__image"><a href="{{route('post')}}"><img
-                                                            srcset="{{ asset('front/images/posts/post3.jpg, images/posts/post3@2x.jpg 2x') }}"
-                                                            src="{{ asset('front/images/posts/post3.jpg') }}" alt=""></a></div>
-                                                <div class="post-card__info">
-                                                    <div class="post-card__date">August 8, 2018</div>
-                                                    <div class="post-card__name"><a
-                                                            class="post-card__name-link"
-                                                            href="{{route('post')}}">Aliquam facilisis dapibus eros
-                                                            sit amet fermentum vestibulum congue</a></div>
-                                                    <div class="post-card__description">Lorem ipsum dolor
-                                                        sit amet, consectetur adipisi nel elit, sed do
-                                                        eiusmod tempor incididunt ut labore et dolore magna
-                                                        aliqua.</div><a href="{{route('post')}}"
-                                                        class="btn btn-primary btn-xs post-card__read-more">Read
-                                                        More</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @endforeach
+                                      
+                                      
                                     </div>
                                 </div>
                             </section>
-                            <section class="card">
+                            {{-- <section class="card">
                                 <div class="card__header">
                                     <h3 class="decor-header">Comments (4)</h3>
                                 </div>
@@ -367,7 +293,7 @@ Posts
                                         </div>
                                     </form>
                                 </div>
-                            </section>
+                            </section> --}}
                         </div>
                     </div>
                     <div class="col-12 col-lg-3">
@@ -524,40 +450,7 @@ Posts
                                         </div>
                                     </div>
                                 </div><!-- widget-newsletter / end -->
-                                <!-- widget-comments -->
-                                <div class="widget widget-comments widget--card">
-                                    <div class="widget__title">
-                                        <h4 class="decor-header">Latest Comments</h4>
-                                    </div>
-                                    <div class="widget__body">
-                                        <ul class="widget-comments__list">
-                                            <li class="widget-comments__item"><span
-                                                    class="widget-comments__author">Emma Williams</span> on
-                                                <a href="#">Nullam at varius sapien sed sit amet condimentum
-                                                    elit</a>
-                                                <div class="widget-comments__date">3 minutes ago</div>
-                                            </li>
-                                            <li class="widget-comments__item"><span
-                                                    class="widget-comments__author">Airic Ford</span> on <a
-                                                    href="#">Integer efficitur efficitur velit non pulvinar
-                                                    pellentesque dictum viverra</a>
-                                                <div class="widget-comments__date">25 minutes ago</div>
-                                            </li>
-                                            <li class="widget-comments__item"><span
-                                                    class="widget-comments__author">Loyd Walker</span> on <a
-                                                    href="#">Curabitur quam augue vestibulum in mauris
-                                                    fermentum pellentesque libero</a>
-                                                <div class="widget-comments__date">1 hour ago</div>
-                                            </li>
-                                            <li class="widget-comments__item"><span
-                                                    class="widget-comments__author">Jessica Moore</span> on
-                                                <a href="#">Vestibulum leo sapien sollicitudin at magna eu
-                                                    interdum congue feugiat</a>
-                                                <div class="widget-comments__date">3 days ago</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div><!-- widget-comments / end -->
+                            
                                 <!-- widget-banner -->
                                 <div class="widget"><a href="#" class="widget-sidebar-banner">
                                         <picture>

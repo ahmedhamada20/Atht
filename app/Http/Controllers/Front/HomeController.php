@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,11 @@ class HomeController extends Controller
         return view('front.index');
     }
 
+    public function Details_post($id)
+    {
+       $data = Blog::findorfail($id);
+       return view('front.post.index',compact('data'));
+    }
 
     public function Details_products($id)
     {
